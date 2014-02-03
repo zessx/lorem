@@ -36,7 +36,7 @@ foreach ($formats as $format) {
 		$source = '';
 		for($j = 0; $j < $n; $j += $lorems[$index]['length'])
 			$source .= ' '.$lorems[$index]['text'];
-		$output .= '<p>'.str_replace('..', '.', implode(' ', array_slice(explode(' ', ltrim($source)), 0, $n)).'.').'</p>';
+		$output .= '<p>'.preg_replace('/\W\.$/', '.', implode(' ', array_slice(explode(' ', ltrim($source)), 0, $n)).'.').'</p>';
 		$index = ($index + 1) % 3;
 	}
 }
