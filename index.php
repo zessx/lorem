@@ -17,7 +17,7 @@ $lorems = array(
 
 $formats = explode(
 	'+',
-	(isset($_GET['format']) && preg_match('/^\d+(x\d+)?(\+\d+(x\d+)?)*$/', $_GET['format']) !== false)
+	(isset($_GET['format']) && preg_match('/^\d+(x\d+)?(\+\d+(x\d+)?)*$/', $_GET['format']))
 		? $_GET['format']
 		: implode('+', array_map(function($l) { return $l['length']; }, $lorems))
 );
